@@ -68,6 +68,10 @@ nav .bottom {
   margin-top: 1.6rem;
   padding: 1.6rem 0;
   border-top: 1px solid #16133e;
+  animation: stickyNavBottom linear forwards;
+  animation-timeline: view();
+  animation-range-start: 100vh;
+  animation-range-end: 120vh;
 }
 
 @media screen and (min-width: 800px) {
@@ -126,20 +130,30 @@ nav .button-2 {
 @keyframes stickyNav {
   100% {
     box-shadow: 0 0 0.75rem hsl(0 0% 0% / 0.3);
+    padding: 10px var(--gap-x);
+  }
+}
+
+@keyframes stickyNavBottom {
+  100% {
+    margin-top: 0.8rem;
+    padding: 0.8rem 0;
   }
 }
 
 #section-1 {
   margin: 120px var(--gap-x) 0 var(--gap-x);
-  padding: 50px 0px 120px 0px;
+  padding: 120px 0px 50px 0px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 5.3rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 800px) {
   #section-1 {
-    padding: 120px 0px 50px 0px;
+    padding: 50px 0px 120px 0px;
   }
 }
 
@@ -148,7 +162,8 @@ nav .button-2 {
 }
 
 #section-1 .left {
-  width: 40%;
+  width: 90%;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -164,8 +179,23 @@ nav .button-2 {
 }
 
 #section-1 .right {
-  width: 50%;
+  width: 90%;
   position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  #section-1 {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #section-1 .left {
+    width: 40%;
+  }
+
+  #section-1 .right {
+    width: 50%;
+  }
 }
 
 #section-1 .right img {
@@ -223,18 +253,36 @@ nav .button-2 {
 
 #section-2 .container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 5.3rem;
 }
 
 #section-2 .box {
-  width: 30%;
+  width: 90%;
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
   padding: 3rem;
   border-radius: 8px;
   border: 1px solid #e5eaf4;
+}
+
+@media screen and (min-width: 800px) {
+  #section-2 .container {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 5.3rem;
+  }
+
+  #section-2 .box {
+    width: 30%;
+    max-width: unset;
+    min-width: 200px;
+  }
 }
 
 #section-2 .box h3 {
@@ -270,4 +318,67 @@ nav .button-2 {
   width: 95%;
   object-fit: contain;
   padding: 1rem;
+}
+
+#section-3 {
+  margin: 120px var(--gap-x) 0 var(--gap-x);
+  display: flex;
+  flex-direction: column;
+  gap: 5.3rem;
+}
+
+#section-3 h2 {
+  color: #87a1b6;
+  font-size: 1rem;
+}
+
+#section-3 p {
+  color: #5a7184;
+  font-size: 1rem;
+}
+
+#section-3 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 5.3rem;
+}
+
+#section-3 .item {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1.114/1;
+  background-size: cover;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  #section-3 .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #section-3 .item {
+    width: 48%;
+    max-width: unset;
+  }
+}
+
+#section-3 .item p {
+  font-size: 1.5rem;
+  color: white;
+  line-height: 2rem;
+}
+
+#section-3 .left {
+  background-image: url('./asset/section3-1.png');
+}
+
+#section-3 .right {
+  background-image: url('./asset/section3-2.png');
 }

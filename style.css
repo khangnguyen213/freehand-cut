@@ -1,0 +1,273 @@
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --gap-x: 50px;
+  --primary-color: #16133e;
+  font-size: 12px;
+  min-height: 200vh;
+}
+
+@media screen and (min-width: 800) {
+  :root {
+    --gap-x: 80px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  :root {
+    --gap-x: 150px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  :root {
+    --gap-x: 300px;
+    font-size: 16px;
+  }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 50px var(--gap-x);
+  border-bottom: 1px solid #efeef3;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background-color: white;
+  animation: stickyNav linear forwards;
+  animation-timeline: view();
+  animation-range-start: 100vh;
+  animation-range-end: 120vh;
+}
+
+nav .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+nav .bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.6rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid #16133e;
+}
+
+@media screen and (min-width: 800px) {
+  nav .bottom {
+    display: none;
+  }
+}
+
+nav .left {
+  width: 10%;
+  min-width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .left img {
+  width: 100%;
+}
+
+nav .middle {
+  width: 40%;
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 800px) {
+  nav .middle {
+    display: flex;
+  }
+}
+
+nav .right {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.button {
+  padding: 1rem 2.1rem;
+  border-radius: 8px;
+  border: 2px solid #16133e;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+nav .button-2 {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+@keyframes stickyNav {
+  100% {
+    box-shadow: 0 0 0.75rem hsl(0 0% 0% / 0.3);
+  }
+}
+
+#section-1 {
+  margin: 120px var(--gap-x) 0 var(--gap-x);
+  padding: 50px 0px 120px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 800px) {
+  #section-1 {
+    padding: 120px 0px 50px 0px;
+  }
+}
+
+#section-1 h2 {
+  font-weight: 300;
+}
+
+#section-1 .left {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 36px;
+}
+
+#section-1 .left div {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 23px;
+}
+
+#section-1 .right {
+  width: 50%;
+  position: relative;
+}
+
+#section-1 .right img {
+  width: 100%;
+}
+
+#section-1 .arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: fit-content;
+  color: white;
+  background-color: var(--primary-color);
+  padding: 17px;
+  border-radius: 8px;
+  font-size: 1.25rem;
+}
+
+#section-1 .arrow-left {
+  left: -20px;
+}
+
+#section-1 .arrow-right {
+  right: -20px;
+}
+
+#section-1 .button-1 {
+  color: white;
+  background-color: #007ffc;
+  border-color: #007ffc;
+}
+
+#section-1 .button-2 {
+  color: #007ffc;
+  border-color: #007ffc;
+}
+
+#section-2 {
+  margin: 120px var(--gap-x) 0 var(--gap-x);
+  display: flex;
+  flex-direction: column;
+  gap: 5.3rem;
+}
+
+#section-2 h2 {
+  color: #87a1b6;
+  font-size: 1rem;
+}
+
+#section-2 p {
+  color: #5a7184;
+  font-size: 1rem;
+}
+
+#section-2 .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#section-2 .box {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 3rem;
+  border-radius: 8px;
+  border: 1px solid #e5eaf4;
+}
+
+#section-2 .box h3 {
+  color: #16133e;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+#section-2 .box p {
+  color: #16133e;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+#section-2 .box a {
+  color: #16133e;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+#section-2 .icon {
+  width: 4.3rem;
+  height: 4.3rem;
+  border: 1px solid #e8f0fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+#section-2 .icon img {
+  width: 95%;
+  object-fit: contain;
+  padding: 1rem;
+}
